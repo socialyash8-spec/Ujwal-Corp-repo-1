@@ -386,12 +386,18 @@
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: clamp(15px, 2vw, 25px);
+            max-width: 1480px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .stat-card {
+            flex: 0 1 280px;
+            width: min(100%, 280px);
             padding: clamp(24px, 3vw, 45px);
             border: 1px solid #17222d;
             border-radius: clamp(20px, 3vw, 30px);
@@ -764,6 +770,68 @@
             border-radius: clamp(18px, 2vw, 24px);
             background: var(--white);
             box-shadow: 0 18px 40px rgba(13, 20, 31, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 50px rgba(13, 20, 31, 0.16);
+        }
+
+        .project-card-small {
+            flex: 0 1 260px;
+            min-height: 180px;
+            max-width: 260px;
+            background: #111820;
+            border-color: #1d2933;
+        }
+
+        .project-card-small {
+            flex: 0 1 260px;
+            min-height: 180px;
+            max-width: 260px;
+            background: #fff;
+            border-color: #e6eef6;
+        }
+
+        .project-card-small-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            padding: clamp(20px, 2.5vw, 24px);
+            color: var(--dark);
+            min-height: 180px;
+            justify-content: center;
+        }
+
+        .project-card-small-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .small-card-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2f5f69, #c9a25d);
+        }
+
+        .project-card-small-inner h3 {
+            margin: 0;
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .project-card-small-inner p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
         }
 
         .project-image {
@@ -1144,6 +1212,33 @@
                 height: 390px;
             }
 
+            .project-grid {
+                justify-content: center;
+            }
+
+            .project-link {
+                max-width: 320px;
+            }
+
+            .project-card-small {
+                min-height: 160px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .project-card-small-inner {
+                padding: clamp(18px, 2.5vw, 22px);
+            }
+
+            .project-card-small-title {
+                gap: 8px;
+            }
+
+            .small-card-badge {
+                width: 10px;
+                height: 10px;
+            }
+
             .review h3 {
                 font-size: 16px;
             }
@@ -1324,6 +1419,13 @@
                 <p>Project Support</p>
             </div>
 
+            <div class="stat-card">
+                <h2>
+                    <span class="stat-number" data-target="15">15</span>L+
+                </h2>
+                <p>sq.ft Delivered</p>
+            </div>
+
         </div>
     </section>
 
@@ -1331,7 +1433,8 @@
 
     <section class="info-section">
         <div class="info-card">
-            <h2>UJWAL CORP | REAL ESTATE BUILDER FROM PUNE</h2>
+            <h2>UJWAL CORP | <br>
+                REAL ESTATE BUILDER FROM PUNE</h2>
 
             <p>
                 Based in Pune, Ujwal Corp is a respected real estate developer with a strong reputation for dependable building and construction services.
@@ -1634,6 +1737,22 @@
 
         <div class="project-grid">
 
+            <a class="project-link" href="Ujwal Paradise.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured6.jpg.jpeg"
+                            alt="Ujwal Paradise project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Paradise</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
             <a class="project-link" href="Ujwal Viaan.html">
             <div class="project-card">
                 <div class="project-image">
@@ -1650,6 +1769,22 @@
             </div>
         </a>
 
+            <a class="project-link" href="Ujwal High Bliss.html">
+                <div class="project-card">
+                    <div class="project-image project-image-centered">
+                        <img
+                            src="images/featured7.jpg.jpeg"
+                            alt="Ujwal High Bliss project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal High Bliss</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
             <a class="project-link" href="Ujwal Classic.html">
                 <div class="project-card">
                     <div class="project-image">
@@ -1661,6 +1796,22 @@
                     </div>
                     <div class="project-caption">
                         <h3>Ujwal Classic</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="Ujwal Liberty.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured8.jpg.jpeg"
+                            alt="Ujwal Liberty project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Liberty</h3>
                         <p>Dhayari, Pune, Maharashtra</p>
                     </div>
                 </div>
@@ -1682,50 +1833,98 @@
                 </div>
             </a>
 
-            <a class="project-link" href="Ujwal Paradise.html">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img
-                            src="images/featured6.jpg.jpeg"
-                            alt="Ujwal Paradise project"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="project-caption">
-                        <h3>Ujwal Paradise</h3>
-                        <p>Dhayari, Pune, Maharashtra</p>
+            <a class="project-link" href="#" aria-label="Ujwal Greens project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Greens</h3>
+                        </div>
+                        <p>Dhayari, Pune</p>
                     </div>
                 </div>
             </a>
 
-            <a class="project-link" href="Ujwal High Bliss.html">
-                <div class="project-card">
-                    <div class="project-image project-image-centered">
-                        <img
-                            src="images/featured7.jpg.jpeg"
-                            alt="Ujwal High Bliss project"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="project-caption">
-                        <h3>Ujwal High Bliss</h3>
-                        <p>Dhayari, Pune, Maharashtra</p>
+            <a class="project-link" href="#" aria-label="Ujwal Corona project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Corona</h3>
+                        </div>
+                        <p>Kondhwa, Pune</p>
                     </div>
                 </div>
             </a>
 
-            <a class="project-link" href="Ujwal Liberty.html">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img
-                            src="images/featured8.jpg.jpeg"
-                            alt="Ujwal Liberty project"
-                            loading="lazy"
-                        >
+            <a class="project-link" href="#" aria-label="Ujwal Oakwood project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Oakwood</h3>
+                        </div>
+                        <p>Dhayari, Pune</p>
                     </div>
-                    <div class="project-caption">
-                        <h3>Ujwal Liberty</h3>
-                        <p>Dhayari, Pune, Maharashtra</p>
+                </div>
+            </a>
+
+            <a class="project-link" href="#" aria-label="Ujwal Vasant Lata project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Vasant Lata</h3>
+                        </div>
+                        <p>Kondhwa, Pune</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="#" aria-label="Ujwal Nisarg project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Nisarg</h3>
+                        </div>
+                        <p>Kirkitwadi, Pune</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="#" aria-label="Ujwal Terrace project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Ujwal Terrace</h3>
+                        </div>
+                        <p>Dhayari, Pune</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="#" aria-label="Gold Ember project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Gold Ember</h3>
+                        </div>
+                        <p>Narhe, Pune</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="#" aria-label="Augusta Park project">
+                <div class="project-card project-card-small">
+                    <div class="project-card-small-inner">
+                        <div class="project-card-small-title">
+                            <span class="small-card-badge"></span>
+                            <h3>Augusta Park</h3>
+                        </div>
+                        <p>Dhayari, Pune</p>
                     </div>
                 </div>
             </a>

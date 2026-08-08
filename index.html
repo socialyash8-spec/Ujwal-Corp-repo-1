@@ -1211,11 +1211,11 @@
             .project-card {
                 height: 390px;
             }
-
             .project-grid {
                 justify-content: center;
             }
 
+            /* default link size on mobile (overrides desktop max-width) */
             .project-link {
                 max-width: 320px;
             }
@@ -1237,6 +1237,85 @@
             .small-card-badge {
                 width: 10px;
                 height: 10px;
+            }
+
+            /* Completed projects: force first five items to 2/2/1 on phones only */
+            .projects .project-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: clamp(12px, 2.5vw, 20px);
+                justify-content: center;
+            }
+
+            .projects .project-grid > .project-link {
+                flex: 0 0 50%;
+                max-width: 50%;
+                box-sizing: border-box;
+                padding-left: 6px;
+                padding-right: 6px;
+            }
+
+            /* make the fifth item span full width and center its card */
+            .projects .project-grid > .project-link:nth-child(5) {
+                flex-basis: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .projects .project-grid > .project-link:nth-child(5) .project-card {
+                width: min(320px, 92%);
+                margin: 0;
+            }
+
+            /* Reduce height + padding for the listed small cards on mobile only */
+            .projects .project-link[aria-label="Ujwal Greens project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Ujwal Corona project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Ujwal Oakwood project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Ujwal Vasant Lata project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Ujwal Nisarg project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Ujwal Terrace project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Gold Ember project"] .project-card.project-card-small,
+            .projects .project-link[aria-label="Augusta Park project"] .project-card.project-card-small {
+                min-height: 110px;
+                max-height: 130px;
+            }
+
+            .projects .project-link[aria-label="Ujwal Greens project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Ujwal Corona project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Ujwal Oakwood project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Ujwal Vasant Lata project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Ujwal Nisarg project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Ujwal Terrace project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Gold Ember project"] .project-card-small-inner,
+            .projects .project-link[aria-label="Augusta Park project"] .project-card-small-inner {
+                padding: 10px 12px;
+                min-height: 110px;
+                justify-content: center;
+            }
+
+            .projects .project-link[aria-label="Ujwal Greens project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Ujwal Corona project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Ujwal Oakwood project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Ujwal Vasant Lata project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Ujwal Nisarg project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Ujwal Terrace project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Gold Ember project"] .project-card-small-inner h3,
+            .projects .project-link[aria-label="Augusta Park project"] .project-card-small-inner h3 {
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            .projects .project-link[aria-label="Ujwal Greens project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Ujwal Corona project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Ujwal Oakwood project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Ujwal Vasant Lata project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Ujwal Nisarg project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Ujwal Terrace project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Gold Ember project"] .project-card-small-inner p,
+            .projects .project-link[aria-label="Augusta Park project"] .project-card-small-inner p {
+                font-size: 0.85rem;
+                margin: 0;
             }
 
             .review h3 {

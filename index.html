@@ -964,6 +964,7 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
+            align-items: flex-start;
         }
 
         .mobile-drawer ul {
@@ -973,18 +974,22 @@
             margin: 0;
             padding: 0;
             list-style: none;
+            width: 100%;
         }
 
         .mobile-drawer ul li a {
             font-size: 18px;
             color: var(--dark);
             font-weight: 700;
+            display: inline-flex;
+            justify-content: flex-start;
+            width: 100%;
         }
 
         .mobile-drawer .drawer-quote-link {
             display: inline-flex;
             width: 100%;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .drawer-backdrop {
@@ -1191,6 +1196,7 @@
                 flex-wrap: wrap;
                 gap: clamp(12px, 2.5vw, 20px);
                 justify-content: center;
+                align-items: stretch;
             }
 
             .projects .project-grid > .project-link {
@@ -1199,6 +1205,16 @@
                 box-sizing: border-box;
                 padding-left: 6px;
                 padding-right: 6px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .projects .project-grid > .project-link .project-card {
+                width: 100%;
+                min-height: 390px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
 
             /* make the fifth item span full width and center its card */
@@ -1212,6 +1228,7 @@
             .projects .project-grid > .project-link:nth-child(5) .project-card {
                 width: min(320px, 92%);
                 margin: 0;
+                min-height: 390px;
             }
 
             /* Reduce height + padding for the listed small cards on mobile only */
@@ -1399,12 +1416,6 @@
             </div>
         </div>
 
-        <div class="hero-right">
-            <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop"
-                alt="Modern construction project"
-            >
-        </div>
     </section>
 
     <!-- STATS -->

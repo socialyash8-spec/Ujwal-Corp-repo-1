@@ -26,36 +26,59 @@
         :root {
             --dark: #0f172a;
             --dark-card: #0f171f;
+            --white: #ffffff;
+            --muted: #97a3ad;
+            --gold: #c9a25d;
+            --teal: #1d5f6f;
+            --light: #f7fbfd;
+            --border: #e6eef6;
+            --text: #23303a;
+        }
 
-            .project-grid {
-                justify-content: center;
-            }
+        /* Desktop navbar layout (default) */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 24px;
+        }
 
-            /* default link size on mobile (overrides desktop max-width) */
-            .project-link {
-                max-width: 320px;
-            }
+        nav .logo {
+            margin-right: auto;
+        }
 
-            .project-card-small {
-                min-height: 160px;
-                width: 100%;
-                max-width: 100%;
-            }
+        nav .logo img {
+            height: clamp(48px, 6vw, 72px);
+            width: auto;
+            display: block;
+        }
 
-            .project-card-small-inner {
-                padding: clamp(18px, 2.5vw, 22px);
-            }
-
-            .project-card-small-title {
-                gap: 8px;
-            }
-
-            .small-card-badge {
-                width: 10px;
-                height: 10px;
-            }
-            justify-content: center;
+        nav ul {
+            display: flex;
+            gap: 16px;
+            margin: 0;
             padding: 0;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav .mobile-menu-toggle {
+            display: none;
+        }
+
+        nav > a {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Slightly smaller CTA button on desktop */
+        .nav-btn {
+            padding: 10px clamp(12px, 2vw, 20px);
+            font-size: 13px;
         }
 
         nav .mobile-menu-toggle span,

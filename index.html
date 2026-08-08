@@ -739,18 +739,26 @@
         ========================================= */
 
         .project-grid {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(min(100%, 280px), 1fr)
-            );
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
             gap: clamp(18px, 2.5vw, 30px);
+            margin-inline: auto;
+            max-width: min(100%, 1040px);
+        }
+
+        .project-link {
+            display: block;
+            width: 100%;
+            max-width: 320px;
         }
 
         .project-card {
             display: flex;
             flex-direction: column;
-            height: clamp(330px, 36vw, 460px);
+            flex: 1 1 320px;
+            min-height: 360px;
             overflow: hidden;
             border: 1px solid #e6eef6;
             border-radius: clamp(18px, 2vw, 24px);
@@ -761,17 +769,39 @@
         .project-image {
             display: block;
             flex: 1 1 auto;
-            min-height: 0;
-            padding: clamp(7px, 1vw, 10px);
+            min-height: clamp(200px, 22vw, 240px);
+            overflow: hidden;
             background: var(--light);
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-            border-radius: 10px;
-            object-fit: contain;
+            border-radius: 0;
+            object-fit: cover;
             object-position: center;
+        }
+
+        .project-caption {
+            padding: clamp(12px, 1.2vw, 16px);
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .project-caption h3 {
+            margin: 0;
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .project-caption p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* =========================================
@@ -985,6 +1015,10 @@
             nav .logo {
                 order: 2;
                 margin: 0 auto;
+            }
+
+            nav .logo img {
+                height: clamp(68px, 10vw, 96px);
             }
 
             nav .mobile-menu-toggle {
@@ -1210,23 +1244,22 @@
 
     <section id="home" class="hero">
         <div class="hero-left">
-            <p class="small">PREMIUM CONSTRUCTION COMPANY</p>
+            <p class="small">EXPERT CONSTRUCTION PARTNER</p>
 
             <h1>
-                Building The
-                <span>Future</span>
-                Of Modern Living
+                Shaping Tomorrow's
+                <span>Modern</span>
+                Living Spaces
             </h1>
 
             <p>
-                Ujwal Construction creates premium residential,
-                commercial and infrastructure projects with modern engineering,
-                timeless design and unmatched construction quality.
+                Ujwal Corp delivers carefully built residential, commercial and infrastructure work using modern engineering,
+                timeless styling and trusted construction standards.
             </p>
 
             <div class="hero-buttons">
-                <a href="#contact" class="primary-btn">Start Your Project</a>
-                <a href="#projects" class="secondary-btn">Explore Projects</a>
+                <a href="#contact" class="primary-btn">Launch Your Project</a>
+                <a href="#projects" class="secondary-btn">View Projects</a>
             </div>
         </div>
 
@@ -1282,38 +1315,26 @@
 
     <section class="info-section">
         <div class="info-card">
-            <h2>UJWAL CORP | REAL ESTATE DEVELOPER IN PUNE</h2>
+            <h2>UJWAL CORP | REAL ESTATE BUILDER FROM PUNE</h2>
 
             <p>
-                Ujwal corp, headquartered in Pune, is a renowned real estate builder
-                known for its reliability and quality construction services.
-                Established in 1989, the group has successfully completed 100+
-                residential and commercial projects in Pune, delivering excellence
-                in terms of planning, strength, and form.
+                Based in Pune, Ujwal Corp is a respected real estate developer with a strong reputation for dependable building and construction services.
+                Since 1989, the company has completed more than 100 residential and commercial developments, focusing on careful planning, solid structure and attractive finishes.
             </p>
 
             <p>
-                With over 4000+ the finest homes created in Pune, Ujwal corp believes
-                in high-quality construction, superior construction technology, and
-                high consumer satisfaction. The group is committed to acting with
-                integrity, ethical standards, and compliance with the law to create
-                lifelong relationships with all customers.
+                Having delivered over 4000 homes across Pune, Ujwal Corp emphasizes premium construction, advanced methods and high customer satisfaction.
+                The team operates with integrity, follows ethical practices and aims to build lasting relationships with buyers.
             </p>
 
             <p>
-                Ujwal corp has developed residential and commercial projects of
-                various sizes in some of Pune's most prestigious neighborhoods,
-                including Sinhagad Road, Baner, Kothrud, Sadashiv Peth, Narayan Peth,
-                and Dhayari. The group offers residential and commercial projects in
-                prime locations in Pune, featuring great amenities and a welcoming
-                atmosphere.
+                Ujwal Corp has created projects in prominent Pune locations including Sinhagad Road,Dhayari.
+                The portfolio includes residential and commercial properties with strong amenities and welcoming communities.
             </p>
 
             <p>
-                If you are looking for affordable commercial office spaces, shops,
-                apartments, or 1/2/3 BHK flats in Pune, Ujwal corp offers
-                ready-to-move-in options. Choose Ujwal corp for your dream home or
-                commercial property in Pune.
+                For affordable shops, office space, apartments or 1/2/3 BHK flats in Pune, Ujwal Corp presents a range of ready-to-move properties.
+                Consider Ujwal Corp for your ideal home or business address in Pune.
             </p>
 
             <div class="info-action">
@@ -1329,8 +1350,8 @@
             <h2>Our Expertise</h2>
 
             <p>
-                High-end construction solutions built with innovation,
-                precision and modern engineering standards.
+                Construction services delivered with advanced thinking,
+                dependable execution and contemporary engineering.
             </p>
         </div>
 
@@ -1338,61 +1359,61 @@
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service1.jpg" alt="Luxury Residences">
+                    <img src="images/service1.jpg" alt="Elegant Residences">
                 </div>
-                <h3>Luxury Residences</h3>
+                <h3>Elegant Residences</h3>
                 <p>
-                    Premium homes designed for modern lifestyle and long-lasting durability.
+                    Stylish homes crafted for modern living and lasting comfort.
                 </p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service2.jpg" alt="Commercial Spaces">
+                    <img src="images/service2.jpg" alt="Business Premises">
                 </div>
-                <h3>Commercial Spaces</h3>
+                <h3>Business Premises</h3>
                 <p>
-                    Smart commercial infrastructure with world-class execution quality.
+                    Smart commercial buildings designed for premium workplace environments.
                 </p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service3.jpg" alt="Architecture Planning">
+                    <img src="images/service3.jpg" alt="Design Planning">
                 </div>
-                <h3>Architecture Planning</h3>
+                <h3>Design Planning</h3>
                 <p>
-                    Creative and functional architecture designed with precision engineering.
+                    Thoughtful building designs created with precision and practicality.
                 </p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service4.jpg" alt="Renovation">
+                    <img src="images/service4.jpg" alt="Renovation Works">
                 </div>
-                <h3>Renovation</h3>
+                <h3>Renovation Works</h3>
                 <p>
-                    Transforming spaces with premium modern interior and exterior upgrades.
+                    Upgrading interiors and exteriors with premium finishes and detail.
                 </p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service5.jpg" alt="Structural Engineering">
+                    <img src="images/service5.jpg" alt="Structural Design">
                 </div>
-                <h3>Structural Engineering</h3>
+                <h3>Structural Design</h3>
                 <p>
-                    Strong, sustainable and technically advanced structural development.
+                    Robust structural solutions built for durability and efficiency.
                 </p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="images/service6.jpg" alt="Project Management">
+                    <img src="images/service6.jpg" alt="Project Oversight">
                 </div>
-                <h3>Project Management</h3>
+                <h3>Project Oversight</h3>
                 <p>
-                    Complete project supervision ensuring timely delivery and quality control.
+                    Full project coordination to keep schedules and quality on track.
                 </p>
             </div>
 
@@ -1410,101 +1431,91 @@
 
             <div class="process-card">
                 <span class="step-num">01</span>
-                <h3>Understanding the Needs of the Residents</h3>
+                <h3>Listening to Resident Priorities</h3>
                 <p>
-                    The initial phase involves engaging with the current residents
-                    of the building or society to comprehend their requirements and
-                    expectations clearly.
+                    We begin by speaking with current building residents to understand
+                    their key needs and expectations before planning the redevelopment.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">02</span>
-                <h3>Conducting an In-depth Location Analysis</h3>
+                <h3>Reviewing the Site and Surroundings</h3>
                 <p>
-                    Following the comprehension of residents' expectations, a team
-                    conducts a comprehensive study of the site and its surrounding
-                    neighborhood to gain insights.
+                    After gathering input, our team studies the location and nearby
+                    neighborhood to evaluate the best redevelopment approach.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">03</span>
-                <h3>Preparing the Redevelopment Blueprint</h3>
+                <h3>Drafting the Redevelopment Plan</h3>
                 <p>
-                    This stage focuses on drafting a blueprint outlining the
-                    redevelopment plans, including proposed designs for both indoor
-                    and outdoor spaces.
+                    This phase creates the redevelopment layout, showing updated
+                    indoor and outdoor design proposals.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">04</span>
-                <h3>Fine-tuning the Proposal as per PMC Framework</h3>
+                <h3>Aligning Plans with PMC Rules</h3>
                 <p>
-                    Once the designs are formulated, they undergo alignment with
-                    the regulations and guidelines set forth by the PMC, with
-                    necessary adjustments made accordingly.
+                    Once the concept is ready, it is refined to satisfy the PMC
+                    regulations and any required technical guidelines.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">05</span>
-                <h3>Registration of Legal Agreement with the Housing Society</h3>
+                <h3>Legal Agreement with the Society</h3>
                 <p>
-                    Upon ensuring compliance with PMC guidelines, a formal legal
-                    agreement is established with the housing society to initiate
-                    the redevelopment process.
+                    A formal agreement is signed with the housing society after the
+                    plan is confirmed and all compliance checks are complete.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">06</span>
-                <h3>Obtaining Approvals from PMC</h3>
+                <h3>Securing PMC Approvals</h3>
                 <p>
-                    Following the legal agreement, the necessary approvals for
-                    construction are sought from the relevant departments within
-                    the PMC.
+                    The necessary construction permissions are then requested from the
+                    relevant PMC departments.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">07</span>
-                <h3>Shifting of Residents Prior to Site Takeover</h3>
+                <h3>Moving Residents Before Work Starts</h3>
                 <p>
-                    Before the commencement of redevelopment activities, arrangements
-                    are made to relocate existing residents to suitable accommodations
-                    to ensure their comfort.
+                    Existing occupants are relocated to suitable temporary housing
+                    so redevelopment can begin smoothly.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">08</span>
-                <h3>Commencing Redevelopment as per Sanctioned Plan</h3>
+                <h3>Starting Work on the Approved Plan</h3>
                 <p>
-                    Once residents have been relocated and all approvals obtained,
-                    demolition and construction work begin according to the sanctioned
-                    plan approved by the PMC.
+                    With approvals secured and residents relocated, construction starts
+                    following the sanctioned redevelopment plan.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">09</span>
-                <h3>Availing Occupancy and Completion Certificates</h3>
+                <h3>Obtaining Completion Certificates</h3>
                 <p>
-                    Upon completion of redevelopment work in accordance with the
-                    approved plan, applications are submitted to the authorities
-                    for occupancy and completion certificates.
+                    After the redevelopment is finished, we apply for occupation and
+                    completion certificates from the authorities.
                 </p>
             </div>
 
             <div class="process-card">
                 <span class="step-num">10</span>
-                <h3>Handover of Homes with New Member Inductions</h3>
+                <h3>Handing Over the New Homes</h3>
                 <p>
-                    A celebration handover ceremony is organized at the newly
-                    constructed building, extending a warm welcome to both existing
-                    and new members of the society.
+                    Finally, the redeveloped building is handed over and residents are
+                    welcomed into the refreshed community.
                 </p>
             </div>
 
@@ -1551,16 +1562,15 @@
         </div>
 
         <div class="about-right">
-            <h2>Crafting Landmarks With Excellence</h2>
+            <h2>Creating Landmarks with Strong Execution</h2>
 
             <p>
-                We combine innovation, craftsmanship and engineering expertise
-                to build projects that stand the test of time while delivering
-                elegance, safety and functionality.
+                Our team blends new ideas, skilled craftsmanship and engineering know-how
+                to deliver buildings that are elegant, safe and built to last.
             </p>
 
             <p>
-                36 Years of Experience, working since 1989. 4 Generations:
+                36 years of experience since 1989. Four generations of leadership:
             </p>
 
             <div class="generation-list">
@@ -1573,22 +1583,22 @@
             <div class="points">
                 <div class="point">
                     <div class="tick">✓</div>
-                    <p>Premium Construction Quality</p>
+                    <p>Superior construction standards</p>
                 </div>
 
                 <div class="point">
                     <div class="tick">✓</div>
-                    <p>Experienced Engineering Team</p>
+                    <p>Proven engineering experience</p>
                 </div>
 
                 <div class="point">
                     <div class="tick">✓</div>
-                    <p>Modern Design & Technology</p>
+                    <p>Contemporary design and technology</p>
                 </div>
 
                 <div class="point">
                     <div class="tick">✓</div>
-                    <p>On-Time Project Completion</p>
+                    <p>Reliable on-time completion</p>
                 </div>
             </div>
         </div>
@@ -1598,45 +1608,139 @@
 
     <section id="projects" class="projects">
         <div class="section-title">
-            <h2>Featured Projects</h2>
+            <h2>Completed Projects</h2>
 
             <p>
-                Iconic spaces built with vision, innovation and precision.
+                Distinct projects created through thoughtful planning and accurate delivery.
             </p>
         </div>
 
         <div class="project-grid">
 
+            <a class="project-link" href="Ujwal Viaan.html">
             <div class="project-card">
                 <div class="project-image">
                     <img
                         src="images/featured2.jpg.jpeg"
-                        alt="Gold Ember project"
+                        alt="Ujwal Viaan project"
                         loading="lazy"
                     >
                 </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src="images/featured1.jpg.jpeg"
-                        alt="High Bliss project"
-                        loading="lazy"
-                    >
+                <div class="project-caption">
+                    <h3>Ujwal Viaan</h3>
+                    <p>Dhayari, Pune, Maharashtra</p>
                 </div>
             </div>
+        </a>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <img
-                        src="images/featured3.jpg.jpeg"
-                        alt="Sam Serena project"
-                        loading="lazy"
-                    >
+            <a class="project-link" href="Ujwal Shaurya.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured1.jpg.jpeg"
+                            alt="Ujwal Shaurya project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Shaurya</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
                 </div>
-            </div>
+            </a>
 
+            <a class="project-link" href="Ujwal Classic.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured3.jpg.jpeg"
+                            alt="Ujwal Classic project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Classic</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="Ujwal Serena.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured4.jpg.jpeg"
+                            alt="Ujwal Serena project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Serena</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="apex-residency.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/service2.jpg"
+                            alt="Apex Residency project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Apex Residency</h3>
+                        <p>Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="section-title">
+            <h2>Ongoing Projects</h2>
+
+            <p>
+                Active developments shaped by planning, quality execution, and timely progress.
+            </p>
+        </div>
+
+        <div class="project-grid">
+            <a class="project-link" href="Ujwal Viaan.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/featured2.jpg.jpeg"
+                            alt="Ongoing Ujwal Viaan project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Ujwal Viaan</h3>
+                        <p>Dhayari, Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="project-link" href="apex-residency.html">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="images/service2.jpg"
+                            alt="Ongoing Apex Residency project"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="project-caption">
+                        <h3>Apex Residency</h3>
+                        <p>Pune, Maharashtra</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -1645,11 +1749,10 @@
     <section class="testimonial">
         <div class="review">
             <p>
-                “Ujwal Corp Construction exceeded our expectations with exceptional
-                quality, professional execution and timely project delivery.”
+                “Ujwal Corp delivered quality beyond what we expected, with a skilled team and timely results.”
             </p>
 
-            <h3>— Satisfied Client</h3>
+            <h3>— Happy Client</h3>
         </div>
     </section>
 
@@ -1657,13 +1760,13 @@
 
     <section id="contact" class="cta">
         <div class="cta-box">
-            <h2>Let’s Build Something Extraordinary</h2>
+            <h2>Let’s Create Something Remarkable</h2>
 
             <p>
-                Partner with Ujwal Corp Construction for premium modern construction solutions.
+                Work with Ujwal Corp for refined construction services and modern building solutions.
             </p>
 
-            <button type="button">Contact Us Today</button>
+            <button type="button">Get in Touch</button>
         </div>
     </section>
 
@@ -1673,9 +1776,9 @@
         <div class="footer-grid">
 
             <div class="footer-box">
-                <h3>Ujwal Corp Construction</h3>
+                <h3>Ujwal Corp</h3>
                 <p>
-                    Building modern spaces with innovation, quality and trust.
+                    Delivering modern developments with care, quality and trust.
                 </p>
             </div>
 
@@ -1683,8 +1786,8 @@
                 <h3>Services</h3>
                 <p>Residential Construction</p>
                 <p>Commercial Projects</p>
-                <p>Architecture Planning</p>
-                <p>Renovation</p>
+                <p>Design Planning</p>
+                <p>Renovation Works</p>
             </div>
 
             <div class="footer-box">

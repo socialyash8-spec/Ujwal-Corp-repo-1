@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujwal Corp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0f172a;
+            --muted: #475569;
+            --gold: #cba55e;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 25px 20px 60px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 18px 20px;
+            background: var(--white);
+            border-radius: 28px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+            margin-bottom: 30px;
+            min-height: 180px;
+            text-align: center;
+        }
+
+        .topbar-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .topbar-title {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .topbar-title h1 {
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.05;
+            color: var(--gold);
+        }
+
+        .topbar-title p {
+            color: var(--muted);
+            font-size: 0.97rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .content-panel,
+        .info-panel,
+        .location-card,
+        .address-card,
+        .disclaimer {
+            background: var(--white);
+            border-radius: 28px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+        }
+
+        .hero-image-panel {
+            overflow: hidden;
+            border-radius: 28px;
+        }
+
+        .hero-image-panel img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: auto;
+            max-height: 680px;
+        }
+
+        .content-panel {
+            padding: 28px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-panel h2 {
+            font-size: clamp(24px, 3.2vw, 34px);
+            margin-bottom: 6px;
+        }
+
+        .content-panel p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .info-panel {
+            padding: 28px 30px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .info-heading {
+            font-size: 1.05rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .amenity-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 18px;
+            border-radius: 8px;
+            background: #efefef;
+            min-height: 120px;
+            box-shadow: none;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .amenity-icon {
+            width: 64px;
+            height: 64px;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+            background: transparent;
+            color: #111;
+            margin: 0 auto 12px;
+        }
+
+        .amenity-card img.amenity-icon {
+            width: 56px;
+            height: 56px;
+            display: block;
+            object-fit: contain;
+            margin: 0 auto 12px;
+        }
+
+        .amenity-text {
+            margin-top: 6px;
+            color: #111;
+            font-size: 0.95rem;
+            text-align: center;
+            line-height: 1.35;
+            font-weight: 600;
+            word-break: keep-all;
+            overflow-wrap: normal;
+        }
+
+        .location-card,
+        .address-card {
+            padding: 22px 24px;
+        }
+
+        .location-card iframe {
+            width: 100%;
+            min-height: 360px;
+            border: 0;
+            display: block;
+            border-radius: 18px;
+            margin: 0;
+        }
+
+        .info-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .location-card p,
+        .address-card p {
+            margin-bottom: 10px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .location-card strong,
+        .address-card strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .address-card .address-line {
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            padding: 22px 24px;
+            margin-top: 18px;
+        }
+
+        .disclaimer p {
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 960px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .amenities-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-wrapper {
+                padding: 18px 16px 36px;
+            }
+
+            .topbar {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .topbar-left {
+                width: 100%;
+            }
+
+            .topbar-title {
+                align-items: center;
+                text-align: center;
+            }
+
+            .content-panel img {
+                height: 240px;
+            }
+
+            .location-card iframe {
+                min-height: 280px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .amenity-card {
+                min-height: 100px;
+                padding: 20px 12px;
+            }
+
+            .amenity-card img.amenity-icon {
+                width: 52px;
+                height: 52px;
+            }
+
+            .amenity-text {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="topbar-title">
+                    <h1>Ujwal Classic</h1>
+                    <p>Premium residential project in Dhayari,Pune, Maharashtra</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-panel">
+            <img src="images/featured3.jpg.jpeg" alt="Sam Serena Exterior">
+        </div>
+
+        <div class="content-grid">
+            <section class="content-panel">
+                <div>
+                    <h2>Project Overview</h2>
+                    <p>
+                        Ujwal Classic is a residential project in Dhayari, Pune offering configured 1BHK and 2BHK homes.
+                        Designed for contemporary living, it features practical layouts, on-site amenities, and easy access to nearby roads.
+                        This community aims to provide a comfortable and convenient home for families and working professionals.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-panel">
+                <div>
+                    <h2 class="info-heading">Amenities</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/childrens play area.png" alt="Children's Play Area">
+                            <div class="amenity-text">Children's Play Area</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/Indoor games.png" alt="Indoor Games">
+                            <div class="amenity-text">Indoor Games</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/car parking.png" alt="Multi-Level Car Parking">
+                            <div class="amenity-text">Multi-Level Car Parking</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/party lawn.png" alt="Party Lawn">
+                            <div class="amenity-text">Party Lawn</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/Paved Trimix Internal Road.webp" alt="Paved Road">
+                            <div class="amenity-text">Paved / Trimix Internal Road</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/generator backup.png" alt="Generator Backup">
+                            <div class="amenity-text">Generator Backup For Common Areas</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/grand enterence.png" alt="Grand Entrance">
+                            <div class="amenity-text">Grand Entrance & Floor Lobbies</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/Sufficient Lighting For Common Areas.png" alt="Sufficient Lighting">
+                            <div class="amenity-text">Sufficient Lighting For Common Areas</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/branded elevetors.avif" alt="Branded Elevators">
+                            <div class="amenity-text">Branded Elevators</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/intercom facility.jpg" alt="Intercom Facility">
+                            <div class="amenity-text">Intercom Facility</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/well illuminated roads.png" alt="Well Illuminated Roads">
+                            <div class="amenity-text">Well Illuminated Roads</div>
+                        </div>
+
+                        <div class="amenity-card">
+                            <img class="amenity-icon" src="images/CCTV.jpg!sw800" alt="CCTV At Entry - Exit Points">
+                            <div class="amenity-text">CCTV At Entry - Exit Points</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-panel">
+                <div class="location-card">
+                    <div class="info-card-title">Location</div>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Ujwal+Classic+Society+18.4446076,73.810884&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <p>
+                        <a href="https://maps.app.goo.gl/AtAeZEmvAhYLZycz7" target="_blank" rel="noopener noreferrer">
+                            Open in Google Maps
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="disclaimer">
+            <p>
+                Disclaimer: The information provided on this page is for reference and marketing purposes only.
+                Actual project specifications, amenities, and location details may vary and are subject to final
+                approval by the developer and local authorities. Please confirm all details with the sales team
+                before making any purchase decision.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

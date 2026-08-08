@@ -1200,8 +1200,8 @@
             }
 
             .projects .project-grid > .project-link {
-                flex: 0 0 50%;
-                max-width: 50%;
+                flex: 0 0 100%;
+                max-width: 100%;
                 box-sizing: border-box;
                 padding-left: 6px;
                 padding-right: 6px;
@@ -1210,11 +1210,16 @@
             }
 
             .projects .project-grid > .project-link .project-card {
-                width: 100%;
+                width: min(320px, 92%);
                 min-height: 390px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+            }
+
+            .projects .project-grid > .project-link .project-card.project-card-small {
+                width: auto;
+                max-width: 260px;
             }
 
             /* make the fifth item span full width and center its card */

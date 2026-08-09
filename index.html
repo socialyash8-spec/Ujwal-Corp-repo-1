@@ -53,6 +53,17 @@
             display: block;
         }
 
+        /* Make the logo appear larger on desktop without affecting layout
+           Uses transform (visual only) inside a desktop-only media query
+           so mobile rules remain unchanged. */
+        @media (min-width: 601px) {
+            nav .logo img {
+                transform: scale(1.8);
+                transform-origin: left center;
+                transition: transform 0.18s ease;
+            }
+        }
+
         nav ul {
             display: flex;
             gap: 16px;
@@ -1054,7 +1065,9 @@
             }
 
             nav .logo img {
-                height: clamp(68px, 10vw, 96px);
+                /* larger logo on mobile only (visual size increase) */
+                height: clamp(80px, 14vw, 110px);
+                transform: none; /* ensure desktop transform doesn't apply */
             }
 
             nav .mobile-menu-toggle {

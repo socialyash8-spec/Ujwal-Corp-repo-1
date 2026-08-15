@@ -1150,10 +1150,14 @@
             .stats-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 12px;
+                display: grid;
+                justify-items: center;
             }
 
             .stat-card {
                 padding: 22px 16px;
+                width: 100%;
+                max-width: 320px;
             }
 
             .stat-card h2 {
@@ -1162,6 +1166,14 @@
 
             .stat-card p {
                 font-size: 12px;
+            }
+
+            /* Make the fifth stat span full width and center below the 2x2 grid */
+            .stats-grid > .stat-card:nth-child(5) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: min(320px, 76%);
+                margin-top: 6px;
             }
 
             .redevelopment-grid,

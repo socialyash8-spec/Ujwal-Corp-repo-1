@@ -1171,6 +1171,13 @@
                 font-size: clamp(31px, 10vw, 48px);
             }
 
+            /* Force the 5th stat ('sq.ft Delivered') heading and its content to match other stats on mobile */
+            .stats-grid > .stat-card:nth-child(5) h2,
+            .stats-grid > .stat-card:nth-child(5) h2 .stat-number {
+                font-size: clamp(31px, 10vw, 48px) !important;
+                line-height: 1 !important;
+            }
+
             .stat-card p {
                 font-size: 12px;
             }

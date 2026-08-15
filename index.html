@@ -62,6 +62,13 @@
                 transform-origin: left center;
                 transition: transform 0.18s ease;
             }
+            /* Ensure 'sq.ft Delivered' (5th stat) matches other stat heading sizes on desktop */
+            .stats-grid > .stat-card:nth-child(5) h2,
+            .stats-grid > .stat-card:nth-child(5) h2 .stat-number,
+            .stats-grid > .stat-card:nth-child(5) h2 .support-value {
+                font-size: clamp(38px, 5vw, 60px);
+                line-height: 1;
+            }
         }
 
         nav ul {
@@ -1222,6 +1229,15 @@
             .stats-grid > .stat-card:nth-child(4) .support-value {
                 height: 1em;
                 gap: 6px;
+            }
+
+            /* Increase Project Support digits to match other stat headings on mobile */
+            .stats-grid > .stat-card:nth-child(4) h2,
+            .stats-grid > .stat-card:nth-child(4) h2 .support-value,
+            .stats-grid > .stat-card:nth-child(4) h2 .support-digit,
+            .stats-grid > .stat-card:nth-child(4) h2 .slash {
+                font-size: clamp(31px, 10vw, 48px) !important;
+                line-height: 1 !important;
             }
 
             /* Ensure all stat numbers (including '15L+') render identically on mobile */

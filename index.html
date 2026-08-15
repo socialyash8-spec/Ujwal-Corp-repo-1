@@ -1168,6 +1168,35 @@
                 font-size: 12px;
             }
 
+            /* Ensure all stat cards are centered and identical on mobile */
+            .stats-grid > .stat-card {
+                text-align: center;
+                align-self: start;
+            }
+
+            .stats-grid > .stat-card h2 {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            /* Specifically ensure the 5th stat ('sq.ft Delivered') matches sizing */
+            .stats-grid > .stat-card:nth-child(5) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: 100%;
+                max-width: 320px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .stats-grid > .stat-card:nth-child(5) h2,
+            .stats-grid > .stat-card:nth-child(5) h2 .stat-number,
+            .stats-grid > .stat-card:nth-child(5) h2 .support-value {
+                font-size: inherit;
+                line-height: 1;
+            }
+
             /* Ensure all stat numbers (including '15L+') render identically on mobile */
             .stats-grid > .stat-card h2 {
                 display: inline-flex;

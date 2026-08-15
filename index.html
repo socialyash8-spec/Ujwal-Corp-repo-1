@@ -1168,6 +1168,27 @@
                 font-size: 12px;
             }
 
+            /* Ensure all stat numbers (including '15L+') render identically on mobile */
+            .stats-grid > .stat-card h2 {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                white-space: nowrap;
+            }
+
+            .stats-grid > .stat-card h2 .stat-number {
+                font-size: inherit;
+                line-height: 1;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .stats-grid > .stat-card h2 .support-value {
+                font-size: inherit;
+                line-height: 1;
+            }
+
             /* Make the fifth stat match the other cards' size and center it */
             .stats-grid > .stat-card:nth-child(5) {
                 grid-column: 1 / -1;
